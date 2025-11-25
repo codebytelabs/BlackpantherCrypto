@@ -1,0 +1,35 @@
+# BlackPanther God Mode - Dependencies
+# Core
+python-dotenv==1.0.0
+asyncio==3.4.3
+
+# Exchange Connectivity
+ccxt==4.4.25
+
+# Data Processing
+pandas==2.2.0
+pandas-ta==0.3.14b0
+numpy==1.26.3
+
+# State Management
+redis==5.0.1
+aioredis==2.0.1
+
+# Database
+supabase==2.3.4
+asyncpg==0.29.0
+
+# HTTP & WebSockets
+aiohttp==3.9.1
+websockets==12.0
+
+# Alerts
+python-telegram-bot==21.0
+
+# Intelligence
+httpx==0.26.0
+
+# Utilities
+pydantic==2.5.3
+pydantic-settings==2.1.0
+loguru==0.7.2

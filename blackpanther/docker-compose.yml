@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  blackpanther:
+    build: .
+    container_name: blackpanther
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+    depends_on:
+      - redis
+    networks:
+      - panther-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: blackpanther-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - panther-net
+
+networks:
+  panther-net:
+    driver: bridge
+
+volumes:
+  redis-data:
